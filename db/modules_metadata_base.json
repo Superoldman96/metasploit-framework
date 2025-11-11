@@ -188659,55 +188659,6 @@
     "needs_cleanup": true,
     "actions": []
   },
-  "exploit_windows/local/linqpad_deserialization_persistence": {
-    "name": "LINQPad Deserialization Exploit",
-    "fullname": "exploit/windows/local/linqpad_deserialization_persistence",
-    "aliases": [],
-    "rank": 300,
-    "disclosure_date": "2024-12-03",
-    "type": "exploit",
-    "author": [
-      "msutovsky-r7 <martin_sutovsky@rapid7.com>",
-      "James Williams"
-    ],
-    "description": "This module exploits a bug in LINQPad up to version 5.52.00. The bug is only exploitable in paid version of software. The core of a bug is cache file containing deserialized data, which attacker can overwrite with malicious payload. The data gets deserialized every time the app restarts.",
-    "references": [
-      "URL-https://trustedsec.com/blog/discovering-a-deserialization-vulnerability-in-linqpad",
-      "CVE-2024-53326"
-    ],
-    "platform": "Windows",
-    "arch": "",
-    "rport": null,
-    "autofilter_ports": [],
-    "autofilter_services": [],
-    "targets": [
-      "Windows"
-    ],
-    "mod_time": "2025-10-19 10:05:48 +0000",
-    "path": "/modules/exploits/windows/local/linqpad_deserialization_persistence.rb",
-    "is_install_path": true,
-    "ref_name": "windows/local/linqpad_deserialization_persistence",
-    "check": true,
-    "post_auth": false,
-    "default_credential": false,
-    "notes": {
-      "Stability": [
-        "crash-safe"
-      ],
-      "Reliability": [
-        "repeatable-session"
-      ],
-      "SideEffects": [
-        "artifacts-on-disk"
-      ]
-    },
-    "session_types": [
-      "shell",
-      "meterpreter"
-    ],
-    "needs_cleanup": null,
-    "actions": []
-  },
   "exploit_windows/local/microfocus_operations_privesc": {
     "name": "Micro Focus Operations Bridge Manager / Reporter Local Privilege Escalation",
     "fullname": "exploit/windows/local/microfocus_operations_privesc",
@@ -199390,6 +199341,55 @@
       ]
     },
     "session_types": [
+      "meterpreter"
+    ],
+    "needs_cleanup": null,
+    "actions": []
+  },
+  "exploit_windows/persistence/linqpad_deserialization": {
+    "name": "LINQPad Deserialization",
+    "fullname": "exploit/windows/persistence/linqpad_deserialization",
+    "aliases": [],
+    "rank": 300,
+    "disclosure_date": "2024-12-03",
+    "type": "exploit",
+    "author": [
+      "msutovsky-r7 <martin_sutovsky@rapid7.com>",
+      "James Williams"
+    ],
+    "description": "This module exploits a bug in LIQPad up to version 5.48.00. The bug is only exploitable in paid version of software. The core of a bug is cache file containing deserialized data, which attacker can overwrite with malicious payload. The data gets deserialized every time the app restarts.",
+    "references": [
+      "URL-https://trustedsec.com/blog/discovering-a-deserialization-vulnerability-in-linqpad",
+      "CVE-2024-53326"
+    ],
+    "platform": "Windows",
+    "arch": "",
+    "rport": null,
+    "autofilter_ports": [],
+    "autofilter_services": [],
+    "targets": [
+      "Windows"
+    ],
+    "mod_time": "2025-11-11 11:22:31 +0000",
+    "path": "/modules/exploits/windows/persistence/linqpad_deserialization.rb",
+    "is_install_path": true,
+    "ref_name": "windows/persistence/linqpad_deserialization",
+    "check": true,
+    "post_auth": false,
+    "default_credential": false,
+    "notes": {
+      "Stability": [
+        "crash-safe"
+      ],
+      "Reliability": [
+        "repeatable-session"
+      ],
+      "SideEffects": [
+        "artifacts-on-disk"
+      ]
+    },
+    "session_types": [
+      "shell",
       "meterpreter"
     ],
     "needs_cleanup": null,
